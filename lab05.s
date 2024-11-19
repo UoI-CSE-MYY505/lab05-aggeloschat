@@ -97,9 +97,11 @@ taken:
 # TODO: Add an example with taken branch to a label which is immediately following the branch
 # ----------------------------------------------------------------------------------------
 
+    beq  zero, s0, nextInstr
+nextInstr:
+    add  t0, s1, s2 # How far does this make it to the pipeline? Is is fetched twice?
+    add  t1, s2, s3 # How about this one?
 
-
-exit:  
-    addi      a7, zero, 10    
+exit:
+    addi      a7, zero, 10
     ecall
-
